@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adenture on Glimmer Island", "Adenture on Glimmer Island\Adenture on Glimmer Island.vcxproj", "{255110F9-D9A1-4E61-A64A-54C51CE51DEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Debug|x64.ActiveCfg = Debug|x64
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Debug|x64.Build.0 = Debug|x64
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Debug|x86.ActiveCfg = Debug|Win32
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Debug|x86.Build.0 = Debug|Win32
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Release|x64.ActiveCfg = Release|x64
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Release|x64.Build.0 = Release|x64
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Release|x86.ActiveCfg = Release|Win32
+		{255110F9-D9A1-4E61-A64A-54C51CE51DEC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B0F847E-E534-48C3-A65C-F22482610E2D}
+	EndGlobalSection
+EndGlobal
