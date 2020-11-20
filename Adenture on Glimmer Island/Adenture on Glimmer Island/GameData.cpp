@@ -9,18 +9,58 @@ GameData::GameData()
 	DebugLocations();
 }
 void GameData::DebugLocations()
+{	
+	if (gameLocations.size() > 0) 
+	{
+		std::cout << "\n" << "There are " << gameLocations.size() << " locations in the world";
+		//loop through  the locations and se if their choices leads to valid locations ie the locations the choice leads to exists in the array of locations
+		for (int i = 0; i < gameLocations.size(); i++)
+		{			
+			if (NoDuplicates(gameLocations[i].id))
+			{
+				//check that all of the location ids for the choices are findable in the list of gamelocations.
+				for (int j = 0; j < gameLocations[i].choices.size(); j++)
+				{
+					if (!Validate(gameLocations[i].choices[j].locationID))
+						std::cout << "\n" << "The next location id of " << gameLocations[i].choices[j].choiceDescription << " is invalid need to lead to location that exist";
+				}
+			}
+			else 
+			{
+
+				std::cout << "\n"<<gameLocations[i].id<<" appears more than once please remove the ducplicate locations or change the id if intending to add a similar but slightly different location";
+					return;
+			}
+		}
+	}
+	else
+		std::cout << "\n" << "No locations are added to the gameworld";
+	
+}
+//Check the sent in string towards the location ids in the list of gamelocations. if more than one location has the same id this will stop and return back out
+//false.
+bool GameData::NoDuplicates(std::string& element)
+{
+	int elementOccurance = 0; // this is increased whenever Location.id is equal to in string 
+	for(int i =0;i<gameLocations.size();i++)
+	{
+		if (element == gameLocations[i].id)
+			elementOccurance++;
+	}
+	if (elementOccurance > 1)
+		return false;
+
+	return true;
+}
+
+bool GameData::Validate(std::string& id)
 {
 	for(int i = 0;i<gameLocations.size();i++)
 	{
-		std::cout<<"\n"<<gameLocations[i].id;
-		std::cout << "\n" << gameLocations[i].description;
-		//go through all of the locations choices and write them out along with where they lead
-		for(int j =0;j<gameLocations[i].choices.size();j++)
-		{
-			std::cout << "\n" << gameLocations[i].choices[j].choiceDescription;
-			std::cout << "\n" << gameLocations[i].choices[j].locationID;
-		}
+		if (id == gameLocations[i].id)
+			return true;
 	}
+	return false;
 }
 //Create a number of locations you can visit on Glimmer Island and set up their choices.
 void GameData::CreateLocations()
@@ -44,7 +84,7 @@ void GameData::CreateLocations()
 
 	gameLocations[3].choices.push_back(LocationChoice("Campsite", "Go back to camp"));
 
-	gameLocations[4].choices.push_back(LocationChoice("Temple", "Walk into the ruins"));
+	gameLocations[4].choices.push_back(LocationChoice("Temple Entrance","Walk into the ruins"));
 	gameLocations[4].choices.push_back(LocationChoice("Jungle", "Go back"));
 
 	gameLocations[5].choices.push_back(LocationChoice("Ruins", "Go back out into the Ruins"));

@@ -11,9 +11,8 @@ struct LocationChoice
 {
 	std::string locationID;//choice leads here
 	std::string choiceDescription;// what the choice is
-	// A question I may have around this is that I have encountered different ways of doing the below. It works both to do as I have done below with
-	// the constructor and define it in the header or you can include the definition of the constructor and then implement it in the 
-	//cpp file. Which way is the best to do?
+	// Since the constructor for this one is so short I choose to define it here in the headerfile, for longer functions I would just leave the declaration
+	//and put the implementation in the cpp file.
 	LocationChoice(std::string nextLocation,std::string description)
 	{
 		locationID = nextLocation;
@@ -26,8 +25,8 @@ struct Location
 	std::string id;
 	std::string description;
 	std::vector<LocationChoice> choices;
-	//Question about & from what I have understood they should be used when passing objects like strings but I seem to not get the structs to work
-	// when using them. Adding strings to the struct while using the & generate errors.
+	//the constructor takes in strings rather than string references right now as the strings are defined at creation of this struct
+	// in the future when predefined strings is used I will change these to string references, the same goes for the Location choice above
 	Location(std::string locationId,std::string inDescription)
 	{
 		id = locationId;
@@ -40,6 +39,9 @@ public:
 	GameData();//constructor, calls the debuglocations and setup the gameworld
 	void DebugLocations();//write out the id and description of all the locations in the game world.
 private:
-	void CreateLocations();//create locations and place them in the locations array below
 	std::vector<Location> gameLocations;
+
+	void CreateLocations();//create locations and place them in the locations array below
+	bool NoDuplicates(std::string& element); //search for the input string location id in the gamelocations list and see so that there are no duplicates
+	bool Validate(std::string& id); // compare the next id towards all location ids in the GameLocations if found this will come out true.
 };
