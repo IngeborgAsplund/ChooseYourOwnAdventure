@@ -6,6 +6,8 @@ struct Player
 {
 	Location* currentLocation;
 	int moves;
+	std::string name;
+	std::vector<Location*> visitedLocations;
 	Player()
 	{
 		currentLocation = nullptr;

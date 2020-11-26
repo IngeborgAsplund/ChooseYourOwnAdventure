@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<regex>
 #include<string>
 #include<vector>
 //this file contains the definition of all data necessary for the game to run, things like locations, location choices NPCs 
