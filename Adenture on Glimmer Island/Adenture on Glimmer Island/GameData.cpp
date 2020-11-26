@@ -6,7 +6,6 @@
 GameData::GameData()
 {
 	CreateLocations();
-	DebugLocations();
 }
 void GameData::DebugLocations()
 {	
@@ -65,27 +64,44 @@ bool GameData::Validate(std::string& id)
 //Create a number of locations you can visit on Glimmer Island and set up their choices.
 void GameData::CreateLocations()
 {
-	gameLocations.push_back(Location("Campsite", "A small flickering fire in the middle on the cliffy beach.\nIt is surrounded by vreckage from various ships.\nBehind you are the sea, and to the south lies a thick jungle."));
+	gameLocations.push_back(Location("Campsite", "A small fire is flickering in the middle of the cliffy beach.\nIt is surrounded by vreckage from various ships.\nBehind you are the sea, and to the south lies a thick jungle."));
 	gameLocations.push_back(Location("Jungle","Thick vines and lush threes surrounds you on all sides.\nThere are lots of flowers and you can hear birds and insects among the foliage.\nAmong the underbrush a thin path moves forward."));
 	gameLocations.push_back(Location("Dark Campsite", "As you put out the flames of the camppfire the surrounding goes dark\nmaking a swarm of fireflies the only remaining lightsource."));
 	gameLocations.push_back(Location("Wreckage","There are wreckaged parts from at least three different ships here of which one was the one you came with"));
 	gameLocations.push_back(Location("Ruins","You came upon a set of old temple ruins in the middle of the jungle. It is partially grown over with vines and moss"));
 	gameLocations.push_back(Location("Temple Entrance","You enter the ruins and comes upon the entrance to what seem to be an ancient temple"));
 
-	gameLocations[0].choices.push_back(LocationChoice("Dark Campsite","Extinguish the campfire"));
-	gameLocations[0].choices.push_back(LocationChoice("Jungle", "Walk south towards the Jungle"));
-	gameLocations[0].choices.push_back(LocationChoice("Wreckage", "Examine the wreckaged ships"));
+	gameLocations[0].choices.push_back(LocationChoice("Dark Campsite","1. Extinguish the campfire"));
+	gameLocations[0].choices.push_back(LocationChoice("Jungle", "2. Walk south towards the Jungle"));
+	gameLocations[0].choices.push_back(LocationChoice("Wreckage", "3. Examine the wreckaged ships"));
 
-	gameLocations[1].choices.push_back(LocationChoice("Ruins", "Follow the path."));
-	gameLocations[1].choices.push_back(LocationChoice("Campsite", "Go back to camp"));
+	gameLocations[1].choices.push_back(LocationChoice("Ruins", "1. Follow the path."));
+	gameLocations[1].choices.push_back(LocationChoice("Campsite", "2. Go back to camp"));
 
-	gameLocations[2].choices.push_back(LocationChoice("Campsite", "Light the fire again"));
-	gameLocations[2].choices.push_back(LocationChoice("Jungle", "Follow the fireflies"));
+	gameLocations[2].choices.push_back(LocationChoice("Campsite", "1. Light the fire again"));
+	gameLocations[2].choices.push_back(LocationChoice("Jungle", "2. Follow the fireflies"));
 
-	gameLocations[3].choices.push_back(LocationChoice("Campsite", "Go back to camp"));
+	gameLocations[3].choices.push_back(LocationChoice("Campsite", "1. Go back to camp"));
 
-	gameLocations[4].choices.push_back(LocationChoice("Temple Entrance","Walk into the ruins"));
-	gameLocations[4].choices.push_back(LocationChoice("Jungle", "Go back"));
+	gameLocations[4].choices.push_back(LocationChoice("Temple Entrance","1. Walk into the ruins"));
+	gameLocations[4].choices.push_back(LocationChoice("Jungle", "2. Go back"));
 
-	gameLocations[5].choices.push_back(LocationChoice("Ruins", "Go back out into the Ruins"));
+	
+}
+//Find the first object in our game locations list when it is not empty 
+Location* GameData::GetStarterLocation()
+{
+	if (gameLocations.size() > 0)
+		return &gameLocations[0];
+	std::cout << "\n" << "Error: the list of locations where empty";
+	return nullptr;
+}
+Location* GameData::GetLocationWithId(const std::string id)
+{
+	for(int i =0;i<gameLocations.size();i++)
+	{
+		if (gameLocations[i].id == id)
+			return &gameLocations[i];
+	}
+	return nullptr;
 }

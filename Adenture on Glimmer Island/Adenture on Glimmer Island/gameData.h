@@ -38,6 +38,9 @@ class GameData
 public:
 	GameData();//constructor, calls the debuglocations and setup the gameworld
 	void DebugLocations();//write out the id and description of all the locations in the game world.
+	//pointers 
+	Location* GetStarterLocation();
+	Location* GetLocationWithId(const std::string id);
 private:
 	std::vector<Location> gameLocations;
 
