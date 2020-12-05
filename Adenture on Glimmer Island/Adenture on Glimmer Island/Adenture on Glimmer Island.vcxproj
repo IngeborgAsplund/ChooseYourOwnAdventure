@@ -147,14 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Adenture on Glimmer Island.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="adenture on glimmer island.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gamedata.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
-    <ClInclude Include="gameData.h" />
+    <ClInclude Include="gamedata.h" />
     <ClInclude Include="player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\locations.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

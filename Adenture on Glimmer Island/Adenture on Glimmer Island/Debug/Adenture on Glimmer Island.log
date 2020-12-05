@@ -1,5 +1,1 @@
-﻿  Game.cpp
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\Game.cpp(46,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\Game.cpp(56,17): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\Game.cpp(68,26): warning C4018: '<=': signed/unsigned mismatch
-  Adenture on Glimmer Island.vcxproj -> C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Debug\Adenture on Glimmer Island.exe
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Debug\Adenture on Glimmer Island.exe'

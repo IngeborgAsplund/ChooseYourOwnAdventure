@@ -5,7 +5,7 @@
 //Constructor that setup the gameword calling the function for creating locations and then the one for debugging them
 GameData::GameData()
 {
-	CreateLocations();
+	//CreateLocations();
 }
 void GameData::DebugLocations()
 {	
@@ -131,6 +131,48 @@ void GameData::CreateLocations()
 	gameLocations[15].choices.push_back(LocationChoice("Temple Entrance", "2. Run!"));
 }
 //Find the first object in our game locations list when it is not empty 
+void GameData::LoadLocationsFromFile(std::string& fileName)
+{
+	std::ifstream stream(fileName);
+	std::string line;
+	Location working("", "");
+	std::string id;
+	if(stream.is_open)
+	{
+		while(std::getline(stream,line))
+		{
+			if (line.length() == 0) { continue; }
+			if(line[0]=='#')
+			{
+				id = line.substr(1, line.npos);
+				working.id = id;
+			}
+			if(line[0]=='&')
+			{
+				int colonIndex = line.find(':');
+				std::string locid = line.substr(1, colonIndex - 1);
+				std::string locdesc = line.substr(colonIndex + 1, line.npos);
+				working.choices.push_back(LocationChoice(locid, locdesc));
+			}
+			if(line=="===")
+			{
+				gameLocations.push_back(working);
+				working.choices.clear();
+				working.id.clear();
+				working.description.clear();
+			}
+			else
+			{
+				working.description += line.substr(0, line.npos);
+				std::cout << working.description;
+			}
+		}
+	}
+	else 
+	{
+		std::cout << "Unable to open " << fileName << "Please check that the path is correct";
+	}
+}
 Location* GameData::GetStarterLocation()
 {
 	if (gameLocations.size() > 0)

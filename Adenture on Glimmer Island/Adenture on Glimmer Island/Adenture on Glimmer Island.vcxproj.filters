@@ -13,27 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Content">
+      <UniqueIdentifier>{4aaf8df7-2d56-4105-b4e5-c0c035b6288b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Adenture on Glimmer Island.cpp">
+    <ClCompile Include="adenture on glimmer island.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameData.cpp">
+    <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="gamedata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gameData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gamedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\locations.txt">
+      <Filter>Content</Filter>
+    </Text>
   </ItemGroup>
 </Project>
