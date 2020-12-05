@@ -45,7 +45,7 @@ public:
 	Location* GetLocationWithId(const std::string id);
 private:
 	std::vector<Location> gameLocations;
-	void LoadLocationsFromFile(std::string& fileName);
+	void LoadLocationsFromFile(const std::string& fileName);
 	void CreateLocations();//create locations and place them in the locations array below
 	bool NoDuplicates(std::string& element); //search for the input string location id in the gamelocations list and see so that there are no duplicates
 	bool Validate(std::string& id); // compare the next id towards all location ids in the GameLocations if found this will come out true.

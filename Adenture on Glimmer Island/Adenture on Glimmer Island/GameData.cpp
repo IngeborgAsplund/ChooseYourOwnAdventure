@@ -6,6 +6,7 @@
 GameData::GameData()
 {
 	//CreateLocations();
+	LoadLocationsFromFile("locations.txt");
 }
 void GameData::DebugLocations()
 {	
@@ -131,7 +132,7 @@ void GameData::CreateLocations()
 	gameLocations[15].choices.push_back(LocationChoice("Temple Entrance", "2. Run!"));
 }
 //Find the first object in our game locations list when it is not empty 
-void GameData::LoadLocationsFromFile(std::string& fileName)
+void GameData::LoadLocationsFromFile(const std::string& fileName)
 {
 	std::ifstream stream(fileName);
 	std::string line;
