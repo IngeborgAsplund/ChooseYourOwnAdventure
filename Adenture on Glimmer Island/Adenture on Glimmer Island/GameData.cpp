@@ -5,7 +5,6 @@
 //Constructor that setup the gameword calling the function for creating locations and then the one for debugging them
 GameData::GameData()
 {
-	//CreateLocations();
 	LoadLocationsFromFile("locations.txt");
 }
 void GameData::DebugLocations()
@@ -62,7 +61,7 @@ bool GameData::Validate(std::string& id)
 	}
 	return false;
 }
-//Create a number of locations you can visit on Glimmer Island and set up their choices.
+//Create a number of locations you can visit on Glimmer Island and set up their choices. Now obsolete, can be used for debugging though.
 void GameData::CreateLocations()
 {
 	gameLocations.push_back(Location("Campsite", "A small fire is flickering in the middle of the cliffy beach.\nIt is surrounded by vreckage from various ships.\nBehind %%Name%% surge the open sea, and to the south lies a thick jungle."));
@@ -142,7 +141,10 @@ void GameData::LoadLocationsFromFile(const std::string& fileName)
 	{
 		while(std::getline(stream,line))
 		{
-			if (line.length() == 0) { continue; }
+			// Skips forward if first character is /
+			//I know the strech goal want me to include % as a signal for this first step to jump but that would interefer with 
+			//my already defined regex %%Name%% which sometimes is the first that appears on a new line.
+			if (line.length() == 0||line[0]=='/') { continue; }
 			if(line[0]=='#')
 			{
 				id = line.substr(1, line.npos);

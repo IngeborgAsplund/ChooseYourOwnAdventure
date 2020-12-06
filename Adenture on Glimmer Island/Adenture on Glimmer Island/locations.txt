@@ -15,7 +15,7 @@ forking off from it,\n one to the right and one to the left.
 &Ruins:1. Follow the path down south
 &Treasure Shore:2. Follow the path east
 &Mermaid Lagoon:3. Follow the path west
-&Campsite:"4. Go back to camp"
+&Campsite:4. Go back to camp
 ===
 #Dark Campsite
 As %%Name%% put out the flames of the fire the surrounding campsite goes dark\n
@@ -147,7 +147,7 @@ Examining the altar %%Name%% manage to dechifer the name Lor'Ashack written abov
 %%Name%% enter a large rectangular room lined with stone stairs leading down to a pit in the middle.\n 
 a shallow layer of water cover the floor of the pit.
 &Pit Floor:1. Approach the pit
-&Main Corridor:1. Leave
+&Main Corridor:2. Leave
 ===
 #Pit Floor
 %%%Name%% carefully climb down the stairs toward the pit in the middle of the chamber.\n 

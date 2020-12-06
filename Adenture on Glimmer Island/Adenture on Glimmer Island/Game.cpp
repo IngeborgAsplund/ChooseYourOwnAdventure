@@ -1,3 +1,4 @@
+#include<iostream>
 #include"game.h"
 //The function through which the game is run it contains the main gameloop. As the game grows stuff done here will be 
 //split up on multiple classes
@@ -7,20 +8,8 @@ void Game::Run()
 	//choices lead somewhere existing in the game
 	std::cout << "Debugging Locations"<<"\n";
 	gameData.DebugLocations();
-	//welcome message
-	std::cout<<"\nAdventure on Glimmer Island"<<"\n";
-	//ask the player to enter a name
-	std::cout << "\nBefore the game starts, what is your name? \n";
-	//read in name
-	std::getline(std::cin, player.name);
-
-	std::string  introduce= "\nAfter the ship where %%Name%% worked as a deckhand sunk during a raging storm\n%%Name%% find themselves stranded on the rocky beaches of a tropical island,\nthere %%Name%% have set up a camp on the northern shore.\nWhile waiting or rather hoping for another ship to pass by and pick them up\n %%Name%% are currently doing their best to survive,\nexploring the landscape of the island and collecting whatever resources they can find.\n\n";
 	std::regex nameRegex("%%Name%%");
-	std::string output = std::regex_replace(introduce, nameRegex, player.name);
-	std::cout<< output;
-	
-	player.currentLocation = gameData.GetStarterLocation();
-	isRunning = true;
+	ShowMenue(nameRegex);
 	//start game loop
 	while (isRunning)
 	{
@@ -76,4 +65,40 @@ void Game::Run()
 		
 	}
 	
+}
+void Game::ShowMenue(std::regex inRegex)
+{
+	isRunning = false;//temporary shut of the game
+	std::cout << "\nWelcome to the Adventure of Glimmer Island choose the alternative you want to pursue\nselecting the number in front of it\n";
+	std::cout << "1. Start a new game"<<"\n"<<"2. Exit\n";
+	int input;
+	std::cin >> input;
+	if(input ==1)
+	{
+		//ask the player to enter a name
+		std::cout << "\nBefore the game starts, what is your name? \n";
+		player.name = NameInput();
+		std::string  introduce = "\nAfter the ship where %%Name%% worked as a deckhand sunk during a raging storm\n%%Name%% find themselves stranded on the rocky beaches of a tropical island,\nthere %%Name%% have set up a camp on the northern shore.\nWhile waiting or rather hoping for another ship to pass by and pick them up\n %%Name%% are currently doing their best to survive,\nexploring the landscape of the island and collecting whatever resources they can find.\n\n";
+		std::string output = std::regex_replace(introduce, inRegex, player.name);
+		std::cout << output;
+		player.currentLocation = gameData.GetStarterLocation();
+		player.moves = 0;
+		isRunning = true;
+		return;
+	}
+	if(input==2)
+	{
+		isRunning = false;
+		return;
+	}
+	else
+	{
+		std::cout << "\n Faulty input. Please input must range between 1-2";
+	}
+}
+std::string Game::NameInput()
+{
+	std::string name;
+	std::cin >> name;
+	return name;
 }
