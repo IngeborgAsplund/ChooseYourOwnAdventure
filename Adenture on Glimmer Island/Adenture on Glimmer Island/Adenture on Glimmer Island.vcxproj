@@ -157,7 +157,7 @@
     <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\locations.txt" />
+    <Text Include="locations.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

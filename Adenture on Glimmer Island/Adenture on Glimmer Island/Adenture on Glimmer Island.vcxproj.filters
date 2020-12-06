@@ -40,7 +40,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\locations.txt">
+    <Text Include="locations.txt">
       <Filter>Content</Filter>
     </Text>
   </ItemGroup>

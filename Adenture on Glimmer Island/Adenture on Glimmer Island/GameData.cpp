@@ -138,7 +138,7 @@ void GameData::LoadLocationsFromFile(const std::string& fileName)
 	std::string line;
 	Location working("", "");
 	std::string id;
-	if(stream.is_open)
+	if(stream.is_open())
 	{
 		while(std::getline(stream,line))
 		{
@@ -147,6 +147,7 @@ void GameData::LoadLocationsFromFile(const std::string& fileName)
 			{
 				id = line.substr(1, line.npos);
 				working.id = id;
+				continue;
 			}
 			if(line[0]=='&')
 			{
@@ -154,6 +155,7 @@ void GameData::LoadLocationsFromFile(const std::string& fileName)
 				std::string locid = line.substr(1, colonIndex - 1);
 				std::string locdesc = line.substr(colonIndex + 1, line.npos);
 				working.choices.push_back(LocationChoice(locid, locdesc));
+				continue;
 			}
 			if(line=="===")
 			{
@@ -161,11 +163,11 @@ void GameData::LoadLocationsFromFile(const std::string& fileName)
 				working.choices.clear();
 				working.id.clear();
 				working.description.clear();
+				continue;
 			}
 			else
-			{
-				working.description += line.substr(0, line.npos);
-				std::cout << working.description;
+			{				
+				working.description += line.substr(0, line.npos);			
 			}
 		}
 	}

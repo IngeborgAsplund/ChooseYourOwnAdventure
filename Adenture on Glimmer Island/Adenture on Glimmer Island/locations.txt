@@ -1,0 +1,203 @@
+#Campsite
+A small fire is flickering in the middle of the cliffy beach.\n
+It is surrounded by vreckage from various ships.\nBehind %%Name%%
+surges an open sea, and to the south grows a thick jungle\n
+reaching towards what appears to be a range of muntains in the distance.
+&Dark Campsite:1. Extinguish the campfire
+&Jungle:2. Walk south towards the Jungle
+&Wreckage:3. Examine the wreckaged ships
+===
+#Jungle
+Thick vines and lush threes surrounds %%Name%% on all sides.
+\nThere are lots of flowers and %%Name%% can hear birds and insects among the foliage.\n
+Among the underbrush is a thin path barely visible\n leading to the south with two offshots
+forking off from it,\n one to the right and one to the left.
+&Ruins:1. Follow the path down south
+&Treasure Shore:2. Follow the path east
+&Mermaid Lagoon:3. Follow the path west
+&Campsite:"4. Go back to camp"
+===
+#Dark Campsite
+As %%Name%% put out the flames of the fire the surrounding campsite goes dark\n
+making a swarm of fireflies the only remaining lightsource.
+&Campsite:1. Light the fire again
+&Small waterfall:2. Follow the fireflies
+===
+#Wreckage
+There are wreckaged parts from at least three different vessels\n
+here of which one was the ship %%Name%% came with
+&The Glowing Maiden: 1. Examine the ship %%Name%% came with.
+&The Bronze Flute: 2. Examine the wreckage to the left of %%Name%%
+&Unknown Old Vessel: 3. Examine the wreckage to the right of %%Name%%
+&Campsite:4. Go back to camp
+===
+#The Glowing Maiden
+The wreckage of the vessel %%Name%% was traveling with seem to have washed up on this barren shoreline togheter with them.\n
+Dark brown wood sticks up from the side and %%Name%% can see part of the bow of the ship\n
+crushed between two dark jagged cliff. Part of the captains quarters seem to also have washed up on shore.
+&Wreckage:1. Stop investigation
+===
+#The Bronze Flute
+According to the name ingraved into the intact part of the shipwreck bow this vessel was named\n
+The Bronce Flute. Although the vessel is entirely ruined there are still signs pointing to her\n
+once beeing an incredible vessel, probably built for warfare or to be part of a kings personal fleet.
+&Wreckage:1. Stop investigation
+===
+#Unknown Old Vessel
+Everything about this vessel is hard to make out, its part is scattered across a larger area and most\n
+of her pieces are small, withered and old. It seems she have laid here for a longer amount of time and\n
+among her pieces aquatic birds is currently nesting.
+&Wreckage:1. Stop investigation
+===
+#Ruins
+%%Name%% came upon a set of old temple ruins in the middle of the jungle.\n 
+It is partially grown over with vines and moss a bit further in \n %%Name%% spot
+what might be an entrance to the main Templebuilding.
+&Temple Entrance:1. Enter the temple ruins
+&Jungle:2. Go back
+===
+#Temple Entrance
+%%Name%% enter the temple ruins finding themselves standing in what appears to once have been a foayer area
+\nTwo corridors lead into the temple from where %%Name%% stands\n, one continuing south from where 
+%%Name%% stand\nand one turning to the left.
+&Main Corridor:1. Follow the main corridor
+&Left Corridor:2. Go to the left
+&Ruins:3. Go back
+===
+#Treasure Shore
+A wide white sandy beach streaches from where %%Name%% is currently standing.\n
+Along the left border the beach area seemlessly transists into jungle flora and\n
+to the right of %%Name%% the sea sends shallow waves over what seem to be a shallow part\n
+of white ocean floor
+&Letter In A Bottle:1. Search the beach
+&Jungle:2. Retrun back into the jungle"
+===
+#Letter In A Bottle
+Searching through the white sand of the beach %%Name%% finds an old rustic bottle that judging\n
+by the label once contained rum. Inside is a curled up piece of parchment. Pulling it out %%Name%%\n
+discovers it to be a letter. When skimmed through it appears that the writer was affraid of something\n
+on the island. Talking about a he who lurks beneathe the surface, mentioning a temple which the writer\n
+seems to believe is the source of a curse that cause nightmarish creatures to appear out of the water\n
+in the middle of the night. Creatures that hunger, that hunt, that the writer of the letter believe once\n
+was the inhabitants of the island.
+&Treasure Shore:1. Put away letter.
+===
+#Small waterfall
+The fireflies seem to be drawn to a small waterall hitting a lagoon suth west of the camp.
+\nThe lagoon is surrounded by jungle threes and %%Name%% can hear the humming\n
+of thousands of tropical insects in the distance"
+&Mermaid Lagoon:1. Walk out from the waterfall toward the lagoon
+&Dark Campsite:2. Go back to camp.
+===
+#Mermaid Lagoon
+%%Name%% enters a pristine deep blue lagoon white sand lines the edges and scattered across the lagoon small\n
+black rocks of slick texture is scattered. %%Name%% can spot some vaugley humanoid shapes resting by the rocks.\n 
+They are too far away to be properly distinguished but %%Name%% is sure they are there.
+&Merfolk Encounter: 1: Appraoch the humaniod shapes
+&Small waterfall:1. Go back
+===
+#Merfolk Encounter
+Curious about the humanoind shapes %%Name%% approaches them but as soon as they comes closer the shapes\n
+dives beneath the surface and dissapear, leaving nothing but ripples on the surface in of the pristine lagoon.\n
+As %%Name%% look down into the clear blue grean water a face emerges from underneath. Green in color, fishlike\n
+with fins grwoing from she cheekbones and the forhead, eyes rounded big, dark red and pupilless.\nThe creature
+launches up from beneath revealing a vaugley humanlike torso covered in scales attached to a long slivering snakelike\n
+tail ending in a wide fin. It opens it mouth which are wider than it should be reavealing rows and rows of sharp teeth\n
+within.
+&Jungle:1. Run!
+&Death2:2. Try and Communicate
+===
+#Death2
+Against better judgement %%Name%% tries to communicate with the creature despite it dicplaying a clearly agressive behaviour.\n
+The mermaid lashes out snapping with its teeth, giving out what sounds like a mix between a hiss and a screach. Sharp teeth
+sink into the flesh of %%Name%% and a feeling of neverending darkness comes over them. All of a sudden %%Name%% cannot breath\n
+the air around them, and an emminent dryness comes across their skin. Looking down at the bitten arm %%Name%% can see how\n
+bluish green scales thirsty for water rapidly spreads from the bite. And in the water below they see how the color of their\n
+eyes shifts in color to a red.
+===
+#Left Corridor
+Turning to the left %%Name%% enter a long corridor.
+\nWithered stonewalls on towers on both sides of %%Name%%
+\nand an further down %%Name%% se a doorway and a set of stairs leading down.
+&Octagon Chamber:1. Enter Doorway
+&Lower Floor:2. Go down the stairs
+&Temple Entrance:3. Go back
+===
+#Main Corridor
+Walkning south from the temple entance %%Name%% come upon three doorways,\n
+one to the right, one to the left and one to the south
+&Ritual Chamber:1. Enter doorway to the right
+&Pit Chamber:2. Enter doorway to the left
+&Round Chamber:3. Enter doorway to the south
+&Temple Entrance:4. Go back
+===
+#Ritual Chamber
+%%Name%% enter a small room, walls and floor made of greenish overgrown stones.\n 
+In the middle sits the remnants of a black stone altar.
+&Altar:1. Examine the altar
+&Main Corridor:2. Go back
+===
+#Altar
+Carved into the surface in the partially ruined altar is the what appear to be\n
+the image of an ailien looking creatrue with multiple serpentine limbs attached to it.\n
+Examining the altar %%Name%% manage to dechifer the name Lor'Ashack written above the image.
+&Ritual Chamber:1. Stop Examination
+===
+#Pit Chamber
+%%Name%% enter a large rectangular room lined with stone stairs leading down to a pit in the middle.\n 
+a shallow layer of water cover the floor of the pit.
+&Pit Floor:1. Approach the pit
+&Main Corridor:1. Leave
+===
+#Pit Floor
+%%%Name%% carefully climb down the stairs toward the pit in the middle of the chamber.\n 
+Upon reaching the floor %%Name%% realises the fluid covering the floor is way too thick\n 
+and dark to be water and it gives off a strange almost pulsating feeling when it comes in contact with skin.
+&Pit Chamber:1. Leave pit
+===
+#Round Chamber
+The room %%Name%% have entered is big with rounded walls, whaat appears to be\n 
+indents or shelves in the walls appear with regular frequencey.
+\nThere are eigth of them in total.
+&Mystic scroll: 1. Examine the shelves
+&Main Corridor:2. Go back
+===
+#Mystic scroll
+Looking through the shelves that when examined closer seem to have been intentionally built or rather\n
+carved from the rocks %%Name%% find an old parchment scroll partially disolved by the humid atmosphere.\n
+Written on the least damaged part of the scroll the following can be read.-Connected in life through death\n
+we will serve the king of tides from ancient time.
+&Round Chamber:1. Put away scroll
+===
+#Octagon Chamber
+%%Name%% enter a large octagonal chamber, empty skanses lines the wall with frequent intervalls\n
+and in the middle rest a garagantum statue of a strange creature seemingly made up of snakes.\n 
+it is partially overgrown with jungle flora.
+&Left Corridor:1. Go back
+===
+#Lower Floor
+Decending down the staors %%Name%% come upon a big open space.\n
+Four low square shaped plattforms is located in each corner of the room\n
+in the far end %%Name%% se a single glowing doorway shaped like an eye.
+&Chamber of Lor'Ashack:1. Go through the glowing eye
+&Left Corridor:2. Go back up the stairs
+===
+#Chamber of Lor'Ashack
+A huge chamber stretches out in front of %%Name%%. Towards what seem to be a steaming subterrainian lake.\n
+Alongside the wall several statues depicting a creature partially made up of snakes is lined up.\n 
+A low ominous hissing sound can be heard near the waterline
+&Lor'Ashack:1. Gingerly move towards the waterline
+&Lower Floor:2. Go back, making sure not to make a noise"
+===
+#Lor'Ashack
+From the water rises a creature, a dangling mass of rotten seaweed,\n
+several bestial heads attached to a massive body of some huge aquatic animal\n 
+and from the central mass a cluster of snakelike tendrils ending in gaping toothy maws.\n 
+The creature lets out a menacing roar.
+&Death1:1. Hide Behind one of the statues
+&Temple Entrance:2. Run!
+===
+#Death1
+Two massive tentacles rips away the statue %%Name%% where hiding behind.\n
+Soon %%Name%% feel the wet sticky texture of the tentacles wrapping around their torso.\n
+As you are dragged toward the waterline %%Name%% can feel the sharp pain of teeth sinking into their left shoulder.
