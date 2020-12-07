@@ -1,5 +1,5 @@
 ﻿  game.cpp
 C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(45,17): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(57,26): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(58,26): warning C4018: '<=': signed/unsigned mismatch
   Adenture on Glimmer Island.vcxproj -> C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Debug\Adenture on Glimmer Island.exe

@@ -46,6 +46,7 @@ void Game::Run()
 		{
 			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";
 		}
+		std::cout << "26. Open Menue\n";//write out input call pr the menue
 		//prompt for input
 		std::string prompt= "What do %%Name%% want to do?\nPick thir choice through printing the number of the choice and press enter\n";
 		std::string promptstring = std::regex_replace(prompt, nameRegex, player.name);
@@ -61,7 +62,13 @@ void Game::Run()
 			player.moves++;//increase player moves
 		}
 		else
+		{
+			if(input==26)
+			{
+				ShowMenue(nameRegex);
+			}
 			std::cout << "\nFaulty input, please type in the number of the choice you want to take.\n";
+		}
 		
 	}
 	
