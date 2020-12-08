@@ -46,28 +46,32 @@ void Game::Run()
 		{
 			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";
 		}
-		std::cout << "26. Open Menue\n";//write out input call pr the menue
+		std::cout << "[m]\n";//write out input call pr the menue
 		//prompt for input
 		std::string prompt= "What do %%Name%% want to do?\nPick thir choice through printing the number of the choice and press enter\n";
 		std::string promptstring = std::regex_replace(prompt, nameRegex, player.name);
 		std::cout << promptstring;
+		SaveGame();
 		//read input
+		std::string inputstring;
 		int input;
-		std::cin >> input;
-		//if input is bigger than zero but less than or equal to the max amount of choices
-		if (input > 0 && input <= player.currentLocation->choices.size())
+		std::cin >> inputstring;
+		if(inputstring[0]=='m')
 		{
-			player.visitedLocations.push_back(player.currentLocation);
-			player.currentLocation = gameData.GetLocationWithId(player.currentLocation->choices[input - 1].locationID);
-			player.moves++;//increase player moves
+			ShowMenue(nameRegex);
 		}
 		else
 		{
-			if(input==26)
+			std::string::size_type st;
+			input = std::stoi(inputstring, &st);
+			//if input is bigger than zero but less than or equal to the max amount of choices
+			if (input > 0 && input <= player.currentLocation->choices.size())
 			{
-				ShowMenue(nameRegex);
+				player.visitedLocations.push_back(player.currentLocation);
+				player.currentLocation = gameData.GetLocationWithId(player.currentLocation->choices[input - 1].locationID);
+				player.moves++;//increase player moves
 			}
-			std::cout << "\nFaulty input, please type in the number of the choice you want to take.\n";
+			
 		}
 		
 	}
@@ -77,7 +81,7 @@ void Game::ShowMenue(std::regex inRegex)
 {
 	isRunning = false;//temporary shut of the game
 	std::cout << "\nWelcome to the Adventure of Glimmer Island choose the alternative you want to pursue\nselecting the number in front of it\n";
-	std::cout << "1. Start a new game"<<"\n"<<"2. Exit\n";
+	std::cout << "1. Start a new game"<<"\n"<<"2. Exit\n"<<"3. Load SaveGame";
 	int input;
 	std::cin >> input;
 	if(input ==1)
@@ -98,6 +102,11 @@ void Game::ShowMenue(std::regex inRegex)
 		isRunning = false;
 		return;
 	}
+	if(input==3)
+	{
+		LoadGame();
+		isRunning = true;
+	}
 	else
 	{
 		std::cout << "\n Faulty input. Please input must range between 1-2";
@@ -108,4 +117,53 @@ std::string Game::NameInput()
 	std::string name;
 	std::cin >> name;
 	return name;
+}
+//save down the information inside the current location along the players name and current amount of moves. I did not save down the visited locations
+//as you do not use that while playing and there could be a value to get a new output on what you decided to visit each time you play rather than a recording
+//of every single location visited since the game first started.
+void Game::SaveGame()
+{
+	std::ofstream stream("savegame.txt");
+	if (stream.is_open())
+	{
+		stream << "#" << player.currentLocation->id << "\n";
+		stream <<"*"<<player.name<<"\n";
+		stream << player.moves<<"\n";
+		stream.close();
+	}
+	else
+		std::cout << "Could not open savefile\n";
+}
+//load a saved game from menue, can only be done when we have a saved game to load from
+void Game::LoadGame()
+{
+	std::string line;
+	std::ifstream stream("savegame.txt");
+	if (stream.is_open())
+	{
+		while (std::getline(stream, line))
+		{
+			if (line.length() == 0) { continue; }
+			if (line[0] == '#')
+			{
+				std::string id = line.substr(1, line.npos);
+				player.currentLocation = gameData.GetLocationWithId(id);
+				continue;
+			}
+			if (line[0] == '*')
+			{
+				player.name = line.substr(1, line.npos);
+				continue;
+			}
+			else
+			{
+				std::string::size_type st;
+				player.moves = std::stoi(line, &st);
+				continue;
+			}
+		}
+		stream.close();
+	}
+	else
+		std::cout << "Cannot open savefile\n";
 }

@@ -43,5 +43,8 @@
     <Text Include="locations.txt">
       <Filter>Content</Filter>
     </Text>
+    <Text Include="savegame.txt">
+      <Filter>Content</Filter>
+    </Text>
   </ItemGroup>
 </Project>

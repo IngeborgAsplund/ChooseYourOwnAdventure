@@ -39,13 +39,14 @@ class GameData
 {
 public:
 	GameData();//constructor, calls the debuglocations and setup the gameworld
-	void DebugLocations();//write out the id and description of all the locations in the game world.
+	void DebugLocations();//write out the id and description of all the locations in the game world.	
 	//pointers 
 	Location* GetStarterLocation();
 	Location* GetLocationWithId(const std::string id);
 private:
 	std::vector<Location> gameLocations;
-	void LoadLocationsFromFile(const std::string& fileName);
+	bool LoadLocationsFromFile(const std::string& fileName);
+	void InitializeLocations();//loads the locations split over multiple files starting on locations1 and incrementing to a maximum amount of files. In my case it will be three
 	void CreateLocations();//create locations and place them in the locations array below
 	bool NoDuplicates(std::string& element); //search for the input string location id in the gamelocations list and see so that there are no duplicates
 	bool Validate(std::string& id); // compare the next id towards all location ids in the GameLocations if found this will come out true.
