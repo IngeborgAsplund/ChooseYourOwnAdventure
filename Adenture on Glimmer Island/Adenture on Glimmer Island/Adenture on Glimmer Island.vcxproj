@@ -157,7 +157,10 @@
     <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="locations.txt" />
+    <Text Include="locations1.txt" />
+    <Text Include="locations2.txt" />
+    <Text Include="locations3.txt" />
+    <Text Include="locations4.txt" />
     <Text Include="savegame.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

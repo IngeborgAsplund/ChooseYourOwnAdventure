@@ -1,0 +1,69 @@
+//This contains the main locations visitable by the player
+#Campsite
+A small fire is flickering in the middle of the cliffy beach.
+It is surrounded by vreckage from various ships.
+Behind %%Name%% surges an open sea, and to the south grows a thick jungle
+reaching towards what appears to be a range of muntains in the distance.
+&Dark Campsite:1. Extinguish the campfire
+&Jungle:2. Walk south towards the Jungle
+&Wreckage:3. Examine the wreckaged ships
+===
+#Jungle
+Thick vines and lush threes surrounds %%Name%% on all sides.
+There are lots of flowers and %%Name%% can hear birds and insects among the foliage.
+Among the underbrush is a thin path barely visible
+leading to the south with two offshots
+forking off from it,
+one to the right and one to the left.
+&Ruins:1. Follow the path down south
+&Treasure Shore:2. Follow the path east
+&Mermaid Lagoon:3. Follow the path west
+&Campsite:4. Go back to camp
+===
+#Dark Campsite
+As %%Name%% put out the flames of the fire the surrounding campsite goes dark
+making a swarm of fireflies the only remaining lightsource.
+&Campsite:1. Light the fire again
+&Small waterfall:2. Follow the fireflies
+===
+#Wreckage
+There are wreckaged parts from at least three different vessels
+here of which one was the ship %%Name%% came with
+&The Glowing Maiden: 1. Examine the ship %%Name%% came with.
+&The Bronze Flute: 2. Examine the wreckage to the left of %%Name%%
+&Unknown Old Vessel: 3. Examine the wreckage to the right of %%Name%%
+&Campsite:4. Go back to camp
+===
+#Ruins
+%%Name%% came upon a set of old temple ruins in the middle of the jungle. 
+It is partially grown over with vines and moss a bit further in
+%%Name%% spot what might be an entrance to the main Templebuilding.
+&Temple Entrance:1. Enter the temple ruins
+&Jungle:2. Go back
+===
+#Treasure Shore
+A wide white sandy beach streaches from where %%Name%% is currently standing.
+Along the left border the beach area seemlessly transists into jungle flora and
+to the right of %%Name%% the sea sends shallow waves over what seem to be a shallow part
+of white ocean floor
+&Letter In A Bottle:1. Search the beach
+&Jungle:2. Retrun back into the jungle"
+===
+#Letter In A Bottle
+Searching through the white sand of the beach %%Name%% finds an old rustic bottle that judging
+by the label once contained rum. Inside is a curled up piece of parchment. Pulling it out %%Name%%
+discovers it to be a letter. When skimmed through it appears that the writer was affraid of something
+on the island. Talking about a he who lurks beneathe the surface, mentioning a temple which the writer
+seems to believe is the source of a curse that cause nightmarish creatures to appear out of the water
+in the middle of the night. Creatures that hunger, that hunt, that the writer of the letter believe once
+was the inhabitants of the island.
+&Treasure Shore:1. Put away letter.
+===
+#Small waterfall
+The fireflies seem to be drawn to a small waterall hitting a lagoon suth west of the camp.
+\nThe lagoon is surrounded by jungle threes and %%Name%% can hear the humming\n
+of thousands of tropical insects in the distance"
+&Mermaid Lagoon:1. Walk out from the waterfall toward the lagoon
+&Dark Campsite:2. Go back to camp.
+===
+

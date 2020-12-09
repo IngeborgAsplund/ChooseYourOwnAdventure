@@ -40,10 +40,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="locations.txt">
+    <Text Include="savegame.txt">
       <Filter>Content</Filter>
     </Text>
-    <Text Include="savegame.txt">
+    <Text Include="locations1.txt">
+      <Filter>Content</Filter>
+    </Text>
+    <Text Include="locations2.txt">
+      <Filter>Content</Filter>
+    </Text>
+    <Text Include="locations3.txt">
+      <Filter>Content</Filter>
+    </Text>
+    <Text Include="locations4.txt">
       <Filter>Content</Filter>
     </Text>
   </ItemGroup>

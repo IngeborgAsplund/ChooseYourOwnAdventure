@@ -1,0 +1,27 @@
+//This contain the content for the merfolk lagoon where the player may encounter what remains o the people once living here...
+#Mermaid Lagoon
+%%Name%% enters a pristine deep blue lagoon white sand lines the edges and scattered across the lagoon small
+black rocks of slick texture is scattered. %%Name%% can spot some vaugley humanoid shapes resting by the rocks.
+They are too far away to be properly distinguished but %%Name%% is sure they are there.
+&Merfolk Encounter: 1: Appraoch the humaniod shapes
+&Small waterfall:1. Go back
+===
+#Merfolk Encounter
+Curious about the humanoind shapes %%Name%% approaches them but as soon as they comes closer the shapes
+dives beneath the surface and dissapear, leaving nothing but ripples on the surface in of the pristine lagoon.
+As %%Name%% look down into the clear blue grean water a face emerges from underneath. Green in color, fishlike
+with fins grwoing from she cheekbones and the forhead, eyes rounded big, dark red and pupilless.
+The creature launches up from beneath revealing a vaugley humanlike torso covered in scales attached to a long slivering snakelike
+tail ending in a wide fin. It opens it mouth which are wider than it should be reavealing rows and rows of sharp teeth
+within.
+&Jungle:1. Run!
+&Death2:2. Try and Communicate
+===
+#Death2
+Against better judgement %%Name%% tries to communicate with the creature despite it dicplaying a clearly agressive behaviour.
+The mermaid lashes out snapping with its teeth, giving out what sounds like a mix between a hiss and a screach. Sharp teeth
+sink into the flesh of %%Name%% and a feeling of neverending darkness comes over them. All of a sudden %%Name%% cannot breath
+the air around them, and an emminent dryness comes across their skin. Looking down at the bitten arm %%Name%% can see how
+bluish green scales thirsty for water rapidly spreads from the bite. And in the water below they see how the color of their
+eyes shifts in color to a red.
+===

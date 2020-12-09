@@ -5,7 +5,7 @@
 //Constructor that setup the gameword calling the function for creating locations and then the one for debugging them
 GameData::GameData()
 {
-	bool location = LoadLocationsFromFile("locations.txt");
+	InitializeLocations();
 }
 void GameData::DebugLocations()
 {	
@@ -181,7 +181,20 @@ bool GameData::LoadLocationsFromFile(const std::string& fileName)
 	}
 	return false;
 }
-
+//Here we load locations from a number of textfiles enabling us to organize the game locations better.
+void GameData::InitializeLocations()
+{
+	for ( int i=1;i<=4;i++)
+	{
+		std::string fileToLoad = "locations" + std::to_string(i)+".txt";
+		bool load = LoadLocationsFromFile(fileToLoad);
+		if(!load)
+		{
+			std::cout << "Warning couldn't load" << fileToLoad<<" double check the adress exists\n";
+			return;//break loop if a file could not load a file
+		}
+	}
+}
 
 Location* GameData::GetStarterLocation()
 {
