@@ -150,10 +150,12 @@
     <ClCompile Include="adenture on glimmer island.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gamedata.cpp" />
+    <ClCompile Include="items.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
     <ClInclude Include="gamedata.h" />
+    <ClInclude Include="items.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>

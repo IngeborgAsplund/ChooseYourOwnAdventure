@@ -46,7 +46,7 @@ void Game::Run()
 		{
 			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";
 		}
-		std::cout << "[m]\n";//write out input call pr the menue
+		std::cout << "Menue [m]\n"<<"Inventory[i]\n";//write out input call pr the menue
 		//prompt for input
 		std::string prompt= "What do %%Name%% want to do?\nPick thir choice through printing the number of the choice and press enter\n";
 		std::string promptstring = std::regex_replace(prompt, nameRegex, player.name);
@@ -59,6 +59,10 @@ void Game::Run()
 		if(inputstring[0]=='m')
 		{
 			ShowMenue(nameRegex);
+		}
+		if(inputstring[0]=='i')
+		{
+			ShowvInventory();
 		}
 		else
 		{
@@ -81,7 +85,7 @@ void Game::ShowMenue(std::regex inRegex)
 {
 	isRunning = false;//temporary shut of the game
 	std::cout << "\nWelcome to the Adventure of Glimmer Island choose the alternative you want to pursue\nselecting the number in front of it\n";
-	std::cout << "1. Start a new game"<<"\n"<<"2. Exit\n"<<"3. Load SaveGame";
+	std::cout << "1. Start a new game"<<"\n"<<"2. Exit\n"<<"3. Load SaveGame\n";
 	int input;
 	std::cin >> input;
 	if(input ==1)
@@ -94,6 +98,7 @@ void Game::ShowMenue(std::regex inRegex)
 		std::cout << output;
 		player.currentLocation = gameData.GetStarterLocation();
 		player.moves = 0;
+		player.AddItem("Scroll01", 1);
 		isRunning = true;
 		return;
 	}
@@ -110,6 +115,39 @@ void Game::ShowMenue(std::regex inRegex)
 	else
 	{
 		std::cout << "\n Faulty input. Please input must range between 1-2";
+	}
+}
+//when showing the inventory this function is called
+void Game::ShowvInventory()
+{
+	for (int i = 0; i < player.inventory.size(); i++)
+	{
+		for(int j =0; j < gameData.gameItems.size();j++)
+		{
+			if(player.inventory[i].itemId == gameData.gameItems[j]->GetID())
+			{
+				std::cout << i + 1 << ". " << gameData.gameItems[j]->GetTitle()<<"\n";
+			}
+		}
+	}
+	std::cout << "[i] Close inventory\n";
+	std::string inventoryInput;
+	std::cin >> inventoryInput;
+	if (inventoryInput[0] == 'i')
+	{
+		return;//exit this function
+	}
+	else
+	{
+		std::string::size_type stringToInt;
+		int input = std::stoi(inventoryInput, &stringToInt);
+		for(int i = 0; i<gameData.gameItems.size(); i++)
+		{
+			if(player.inventory[input-1].itemId==gameData.gameItems[i]->GetID())
+			{
+				gameData.gameItems[i]->UseItem();
+			}
+		}
 	}
 }
 std::string Game::NameInput()
@@ -167,3 +205,36 @@ void Game::LoadGame()
 	else
 		std::cout << "Cannot open savefile\n";
 }
+
+//player related functions below
+//function that add an inventory item to the player providing an id and an amount of items added
+void Player::AddItem(const std::string& id, int amountToAdd)
+{
+	//check if we already has the inventory item
+	for (int i = 0; i < inventory.size(); i++)
+	{
+		//if so we want to just increase the amount of items
+		if (id == inventory[i].itemId)
+		{
+			inventory[i].amount += amountToAdd;
+			return;
+		}
+	}
+	inventory.push_back(InventoryItem(id, amountToAdd));
+}
+//Item removal functions similar to the above but remove the amount of items specified.
+void Player::RemoveItem(const std::string& id, int amountToRemove)
+{
+	for (int i = 0; i < inventory.size(); i++)
+	{
+		if (id == inventory[i].itemId)
+		{
+			inventory[i].amount -= amountToRemove;
+			if (inventory[i].amount <= 0)
+				inventory[i].amount = 0;//here we can remove the item completely in the future.
+			return;
+		}
+	}
+	std::cout << "There where no items of type " << id << " in the inventory";
+}
+
