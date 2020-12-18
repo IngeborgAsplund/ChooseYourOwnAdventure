@@ -24,7 +24,16 @@ one to the right and one to the left.
 As %%Name%% put out the flames of the fire the surrounding campsite goes dark
 making a swarm of fireflies the only remaining lightsource.
 &Campsite:1. Light the fire again
-&Small waterfall:2. Follow the fireflies
+&FruitTrees:2.Search the outline of the forest for food.
+&Small waterfall:3. Follow the fireflies
+===
+#FruitTrees
+%%Name%% decide to take a short walk of from the campsite, in the compact darkness soruonding
+them they feel a connection to nature never felt before. Struck by this insigt %%Name%% search
+the outskrits of the jungle and comes across a three which seem to bear edible fruit
+&Dark Campsite:1.Find way back to camp.
+^Melon
+^RedWildpeach
 ===
 #Wreckage
 There are wreckaged parts from at least three different vessels
@@ -52,12 +61,12 @@ of white ocean floor
 #Letter In A Bottle
 Searching through the white sand of the beach %%Name%% finds an old rustic bottle that judging
 by the label once contained rum. Inside is a curled up piece of parchment. Pulling it out %%Name%%
-discovers it to be a letter. When skimmed through it appears that the writer was affraid of something
-on the island. Talking about a he who lurks beneathe the surface, mentioning a temple which the writer
-seems to believe is the source of a curse that cause nightmarish creatures to appear out of the water
-in the middle of the night. Creatures that hunger, that hunt, that the writer of the letter believe once
+discovers it to be a letter. The material have whithered in places and parts of the message is
+unreadable. The parts that %%Name%% manage to make out of it holds some really disturbing 
+information about the island.
 was the inhabitants of the island.
-&Treasure Shore:1. Put away letter.
+&Treasure Shore:1. Stop looking.
+^LetterInABottle
 ===
 #Small waterfall
 The fireflies seem to be drawn to a small waterall hitting a lagoon suth west of the camp.

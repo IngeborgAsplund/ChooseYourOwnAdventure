@@ -5,6 +5,7 @@
 #include<regex>
 #include<string>
 #include<vector>
+#include<unordered_map>
 #include"items.h"
 //this file contains the definition of all data necessary for the game to run, things like locations, location choices NPCs 
 // and similar
@@ -29,6 +30,7 @@ struct Location
 	std::string id;
 	std::string description;
 	std::vector<LocationChoice> choices;
+	std::vector<std::string> items;
 	//the constructor takes in strings rather than string references right now as the strings are defined at creation of this struct
 	// in the future when predefined strings is used I will change these to string references, the same goes for the Location choice above
 	Location(const std::string &locationId,const std::string &inDescription)
@@ -53,6 +55,7 @@ public:
 	std::vector<std::shared_ptr<Item>> gameItems;
 private:
 	std::vector<std::shared_ptr<Location>> gameLocations;
+	std::unordered_map<std::string, std::shared_ptr<Location>> locationIndex;
 	void InitializeItems();//initialize the items in the game, creating/reading them in from a file(in the future)
 	bool LoadLocationsFromFile(const std::string& fileName);
 	void InitializeLocations();//loads the locations split over multiple files starting on locations1 and incrementing to a maximum amount of files. In my case it will be three

@@ -17,15 +17,18 @@ struct Player
 {
 	std::shared_ptr<Location> currentLocation;
 	int moves;
+	int satation;//how full is the player, he/she will be starting out with this value at 100
 	std::string name;
 	std::vector<InventoryItem> inventory;
-	std::vector<std::shared_ptr<Location>> visitedLocations;
+	std::vector<std::string> visitedLocations;
 	Player()
 	{
 		currentLocation = nullptr;
 		moves = 0;
 	}
 	void AddItem(const std::string &id,int amountToAdd);//we would want to be able to add items to the inventory
-	void RemoveItem(const std::string& id, int amountToRemove);//and remove them	
-	
+	void RemoveItem(const std::string& id, int amountToRemove);//and remove them
+	void SetUpPlayer();//sets up the main information relevant to the player
+	bool AlreadyVisited(std::string compareLoc);//have we already visited this location
+	bool CheckHungerStatus(std::regex inRegex);//this check the current state of the players hunger
 };

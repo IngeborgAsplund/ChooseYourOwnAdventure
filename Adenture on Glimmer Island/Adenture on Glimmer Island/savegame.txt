@@ -1,3 +1,7 @@
-#Temple Entrance
-*Sarah
-0
+#Treasure Shore
+*1
+6
+~Campsite
+~Jungle
+~Treasure Shore
+~Letter In A Bottle

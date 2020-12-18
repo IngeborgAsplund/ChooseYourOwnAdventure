@@ -23,6 +23,22 @@ void Game::Run()
 		
 		std::string roomDescription = std::regex_replace(player.currentLocation->description, nameRegex, player.name);
 		std::cout << roomDescription<<"\n\n";
+		//check so that we havent added the id to the visiedlocations vector
+		if (std::find(player.visitedLocations.begin(), player.visitedLocations.end(), player.currentLocation->id) == player.visitedLocations.end())
+		{
+			player.visitedLocations.push_back(player.currentLocation->id);
+		}
+		if (player.currentLocation->items.size() > 0)
+		{
+			for (int i = 0; i < player.currentLocation->items.size(); i++)
+			{
+				if(gameData.GetItemById(player.currentLocation->items[i])!=nullptr)
+				{
+				  player.AddItem(player.currentLocation->items[i], 1);
+				  std::cout << "You picked up " << player.currentLocation->items[i]<<"\n";
+				}
+			}
+		}
 		//check if choices equals zero
 		if(player.currentLocation->choices.size()==0)
 		{
@@ -34,7 +50,7 @@ void Game::Run()
 			{
 				for(int j = 0;j<player.visitedLocations.size();j++)
 				{
-					std::cout << player.visitedLocations[j]->id<<"\n";
+					std::cout << player.visitedLocations[j]<<"\n";
 				}
 			}
 
@@ -44,11 +60,13 @@ void Game::Run()
 		//write out all of the choices for the current location
 		for(int i =0;i<player.currentLocation->choices.size();i++)
 		{
-			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";
+			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";			
 		}
+		
 		std::cout << "Menue [m]\n"<<"Inventory[i]\n";//write out input call pr the menue
+		isRunning = player.CheckHungerStatus(nameRegex);
 		//prompt for input
-		std::string prompt= "What do %%Name%% want to do?\nPick thir choice through printing the number of the choice and press enter\n";
+		std::string prompt= "What do %%Name%% want to do?\nPick their choice through printing the number of the choice and press enter\n";
 		std::string promptstring = std::regex_replace(prompt, nameRegex, player.name);
 		std::cout << promptstring;
 		SaveGame();
@@ -71,9 +89,10 @@ void Game::Run()
 			//if input is bigger than zero but less than or equal to the max amount of choices
 			if (input > 0 && input <= player.currentLocation->choices.size())
 			{
-				player.visitedLocations.push_back(player.currentLocation);
+				
 				player.currentLocation = gameData.GetLocationWithId(player.currentLocation->choices[input - 1].locationID);
 				player.moves++;//increase player moves
+				player.satation -= 5;
 			}
 			
 		}
@@ -90,15 +109,11 @@ void Game::ShowMenue(std::regex inRegex)
 	std::cin >> input;
 	if(input ==1)
 	{
-		//ask the player to enter a name
-		std::cout << "\nBefore the game starts, what is your name? \n";
-		player.name = NameInput();
+		player.SetUpPlayer();
+		player.currentLocation = gameData.GetStarterLocation();
 		std::string  introduce = "\nAfter the ship where %%Name%% worked as a deckhand sunk during a raging storm\n%%Name%% find themselves stranded on the rocky beaches of a tropical island,\nthere %%Name%% have set up a camp on the northern shore.\nWhile waiting or rather hoping for another ship to pass by and pick them up\n %%Name%% are currently doing their best to survive,\nexploring the landscape of the island and collecting whatever resources they can find.\n\n";
 		std::string output = std::regex_replace(introduce, inRegex, player.name);
 		std::cout << output;
-		player.currentLocation = gameData.GetStarterLocation();
-		player.moves = 0;
-		player.AddItem("Scroll01", 1);
 		isRunning = true;
 		return;
 	}
@@ -126,7 +141,7 @@ void Game::ShowvInventory()
 		{
 			if(player.inventory[i].itemId == gameData.gameItems[j]->GetID())
 			{
-				std::cout << i + 1 << ". " << gameData.gameItems[j]->GetTitle()<<"\n";
+				std::cout << i + 1 << ". " << gameData.gameItems[j]->GetTitle()<<"["<<player.inventory[i].amount<<"]"<<"\n";
 			}
 		}
 	}
@@ -143,11 +158,18 @@ void Game::ShowvInventory()
 		int input = std::stoi(inventoryInput, &stringToInt);
 		for(int i = 0; i<gameData.gameItems.size(); i++)
 		{
-			if(player.inventory[input-1].itemId==gameData.gameItems[i]->GetID())
+			if(player.inventory[input-1].itemId==gameData.gameItems[i]->GetID()&&player.inventory[input-1].amount>0)
 			{
 				gameData.gameItems[i]->UseItem();
+				//only remove items that is consumeable
+				if(gameData.gameItems[i]->GetConsumable())
+				{
+				     player.RemoveItem(player.inventory[input - 1].itemId, 1);//remove one of the items
+				}
+				return;
 			}
 		}
+		std::cout << "Item selected do not exist, you need to find more of "<<player.inventory[input-1].itemId<<"\n";
 	}
 }
 std::string Game::NameInput()
@@ -167,6 +189,10 @@ void Game::SaveGame()
 		stream << "#" << player.currentLocation->id << "\n";
 		stream <<"*"<<player.name<<"\n";
 		stream << player.moves<<"\n";
+		for(int i = 0;i<player.visitedLocations.size(); i++)
+		{
+			stream << "~" << player.visitedLocations[i] << "\n";
+		}
 		stream.close();
 	}
 	else
@@ -193,6 +219,10 @@ void Game::LoadGame()
 				player.name = line.substr(1, line.npos);
 				continue;
 			}
+			if(line[0]=='~')
+			{
+				player.visitedLocations.push_back(line.substr(1, line.npos));
+			}
 			else
 			{
 				std::string::size_type st;
@@ -206,35 +236,5 @@ void Game::LoadGame()
 		std::cout << "Cannot open savefile\n";
 }
 
-//player related functions below
-//function that add an inventory item to the player providing an id and an amount of items added
-void Player::AddItem(const std::string& id, int amountToAdd)
-{
-	//check if we already has the inventory item
-	for (int i = 0; i < inventory.size(); i++)
-	{
-		//if so we want to just increase the amount of items
-		if (id == inventory[i].itemId)
-		{
-			inventory[i].amount += amountToAdd;
-			return;
-		}
-	}
-	inventory.push_back(InventoryItem(id, amountToAdd));
-}
-//Item removal functions similar to the above but remove the amount of items specified.
-void Player::RemoveItem(const std::string& id, int amountToRemove)
-{
-	for (int i = 0; i < inventory.size(); i++)
-	{
-		if (id == inventory[i].itemId)
-		{
-			inventory[i].amount -= amountToRemove;
-			if (inventory[i].amount <= 0)
-				inventory[i].amount = 0;//here we can remove the item completely in the future.
-			return;
-		}
-	}
-	std::cout << "There where no items of type " << id << " in the inventory";
-}
+
 

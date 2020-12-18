@@ -92,11 +92,18 @@ bool GameData::LoadLocationsFromFile(const std::string& fileName)
 				working.choices.push_back(LocationChoice(locid, locdesc));
 				continue;
 			}
+			if(line[0]=='^')
+			{
+				working.items.push_back(line.substr(1, line.npos));
+				continue;
+			}
 			if(line=="===")
 			{
 				std::shared_ptr<Location> add = std::make_shared<Location>(working);
 				gameLocations.push_back(add);
+				locationIndex.insert({ working.id,add });
 				working.choices.clear();
+				working.items.clear();
 				working.id.clear();
 				working.description.clear();
 				continue;
@@ -119,9 +126,17 @@ bool GameData::LoadLocationsFromFile(const std::string& fileName)
 void GameData::InitializeItems()
 {
 	//create a new item of type teleportationscroll
-	std::shared_ptr<TeleportationScroll> scroll01{ new TeleportationScroll("Scroll01","Mystic old scroll","Temple Entrance") };
-	//push back to vector so we can use it
+	std::shared_ptr<TeleportationScroll> scroll01{ new TeleportationScroll("Scroll01","Mystic old scroll",true,"Temple Entrance") };
+	std::shared_ptr<FoodItem>hardtack{ new FoodItem("hardtack","Pack of hardtacks",true,"You reach into your satchel and get out a couple of hardtacks, they taste dry without any water to soften them",15) };
+	std::shared_ptr<FoodItem>melon{ new FoodItem("Melon","Striped Melon",true,"You cut yourself a slice of melon, finding the fruit to be more filling than expected.",20) };
+	std::shared_ptr<FoodItem>wildpeach{ new FoodItem("RedWildpeach","Small red fruit",true,"You consume one of the small red fruits found earlier it taste sweet and a bit tangy",10) };
+	std::shared_ptr<MessageItem>letterInABottle{ new MessageItem("LetterInABottle","Letter in a bottle",false,"Dear captain Jones, If you ever reads this note it means I am no more\n [unreadable part] I have been stuck here on this island for months and I do not know if it is me slowly going mad or if there really are something beneath the temple\n[smeared ink]need to find somewhere to hide soon or else they will find me....\nthey come out during the nigh and they are hungry I can feel it\n [signed First Mate Hopkins]") };
+	//push back to vector so we can use it, some of the items like the fruit for instance is meant to be found by the player when searching the island for food
 	gameItems.push_back(scroll01);
+	gameItems.push_back(hardtack);
+	gameItems.push_back(melon);
+	gameItems.push_back(wildpeach);
+	gameItems.push_back(letterInABottle);//found when searching the beach
 }
 //Here we load locations from a number of textfiles enabling us to organize the game locations better.
 void GameData::InitializeLocations()
@@ -147,10 +162,9 @@ std::shared_ptr<Location> GameData::GetStarterLocation()
 }
 std::shared_ptr<Location> GameData::GetLocationWithId(const std::string &id)
 {
-	for(int i =0;i<gameLocations.size();i++)
+	if(locationIndex.find(id)!=locationIndex.end())
 	{
-		if (gameLocations[i]->id == id)
-			return gameLocations[i];
+		return locationIndex[id];
 	}
 	return nullptr;
 }

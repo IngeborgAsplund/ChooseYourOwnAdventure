@@ -2,11 +2,14 @@
 #include"game.h"
 //extern game variable for the game
 extern Game game;
-Item::Item(const std::string &inId,const std::string &inTitle)
+Item::Item(const std::string &inId,const std::string &inTitle, bool consumable)
 {
 	id = inId;
 	title = inTitle;
+	isConsumeable = consumable;
 }
+//default destructor of the item class this will be called when 
+Item::~Item(){}
 //the base functionality for the items this will later be overriden
 void Item::UseItem()
 {
@@ -21,10 +24,23 @@ const std::string& Item::GetTitle()const
 {
 	return title;
 }
+bool Item::GetConsumable() 
+{
+	return isConsumeable; 
+}
 //Teleportationscroll specific functions
-TeleportationScroll::TeleportationScroll(const std::string& inId, const std::string& inTitle, const std::string& inLocationId):Item(inId,inTitle)
+TeleportationScroll::TeleportationScroll(const std::string& inId, const std::string& inTitle,bool consumable, const std::string& inLocationId):Item(inId,inTitle, consumable)
 {
 	teleportationId = inLocationId;
+}
+FoodItem::FoodItem(const std::string& inId, const std::string& inTitle,bool consumable, const std::string& description, int satation):Item(inId,inTitle, consumable)
+{
+	useageDescription = description;
+	sataionvalue = satation;
+}
+MessageItem::MessageItem(const std::string& inId, const std::string& inTitle,bool consumable, const std::string& inMessage):Item(inId,inTitle,consumable)
+{
+	message = inMessage;
 }
 void TeleportationScroll::UseItem()
 {
@@ -36,4 +52,20 @@ void TeleportationScroll::UseItem()
 		game.player.currentLocation = destination;
 	}
 }
+void FoodItem::UseItem()
+{
+	if(game.player.satation<100)
+	{
+		game.player.satation += sataionvalue;
+		if (game.player.satation > 100)
+			game.player.satation = 100;
+	}
+	std::cout << useageDescription << "\n";
+}
+void MessageItem::UseItem()
+{
+	std::cout << "\n" << message << "\n";
+}
+
+
 
