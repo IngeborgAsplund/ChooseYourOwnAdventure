@@ -55,6 +55,13 @@ bool Player::CheckHungerStatus(std::regex inRegex)
 	}
 	return true;
 }
+//boolean that check if visited locations already contains a given location
+bool Player::AlreadyVisited(std::string compareLoc)
+{
+	if (std::find(visitedLocations.begin(), visitedLocations.end(), compareLoc) != visitedLocations.end())
+		return true;
+	return false;
+}
 //set up all but the players starter location and the ininital console output this serves the purpose of making the menue code in the main game loop more readable
 void Player::SetUpPlayer()
 {

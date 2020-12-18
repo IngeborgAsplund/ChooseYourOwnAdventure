@@ -22,22 +22,25 @@ void Game::Run()
 		}
 		
 		std::string roomDescription = std::regex_replace(player.currentLocation->description, nameRegex, player.name);
-		std::cout << roomDescription<<"\n\n";
+		std::cout << roomDescription<<"\n\n";		
 		//check so that we havent added the id to the visiedlocations vector
-		if (std::find(player.visitedLocations.begin(), player.visitedLocations.end(), player.currentLocation->id) == player.visitedLocations.end())
+		if (!player.AlreadyVisited(player.currentLocation->id))
 		{
-			player.visitedLocations.push_back(player.currentLocation->id);
-		}
-		if (player.currentLocation->items.size() > 0)
-		{
-			for (int i = 0; i < player.currentLocation->items.size(); i++)
+			//if not see if there are any items to pick up from the location
+			if (player.currentLocation->items.size() > 0)
 			{
-				if(gameData.GetItemById(player.currentLocation->items[i])!=nullptr)
+				//go through the list of items 
+				for (int i = 0; i < player.currentLocation->items.size(); i++)
 				{
-				  player.AddItem(player.currentLocation->items[i], 1);
-				  std::cout << "You picked up " << player.currentLocation->items[i]<<"\n";
+					//and add them to the player if they are not equal to null
+					if (gameData.GetItemById(player.currentLocation->items[i]) != nullptr)
+					{
+						player.AddItem(player.currentLocation->items[i], 1);
+						std::cout << "You picked up " << player.currentLocation->items[i] << "\n";
+					}
 				}
 			}
+			player.visitedLocations.push_back(player.currentLocation->id);
 		}
 		//check if choices equals zero
 		if(player.currentLocation->choices.size()==0)

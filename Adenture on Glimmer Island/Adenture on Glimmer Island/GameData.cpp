@@ -130,12 +130,16 @@ void GameData::InitializeItems()
 	std::shared_ptr<FoodItem>hardtack{ new FoodItem("hardtack","Pack of hardtacks",true,"You reach into your satchel and get out a couple of hardtacks, they taste dry without any water to soften them",15) };
 	std::shared_ptr<FoodItem>melon{ new FoodItem("Melon","Striped Melon",true,"You cut yourself a slice of melon, finding the fruit to be more filling than expected.",20) };
 	std::shared_ptr<FoodItem>wildpeach{ new FoodItem("RedWildpeach","Small red fruit",true,"You consume one of the small red fruits found earlier it taste sweet and a bit tangy",10) };
+	std::shared_ptr<FoodItem> silverfinCarp{ new FoodItem("Silverfin carp","Silverfin carp",true,"You never thought you would sink so low as to eat raw fish whilst stuck on a tropical island.\nSomewhere in the back of your mind you swear there must be something better to eat here",5) };
+	std::shared_ptr<FoodItem> grilledSilverfin{ new FoodItem("Grilled silverfin","Grilled fish",true,"Who knew fire could work such wonders. The previously raw fish is now transformed into actual food.",25) };
 	std::shared_ptr<MessageItem>letterInABottle{ new MessageItem("LetterInABottle","Letter in a bottle",false,"Dear captain Jones, If you ever reads this note it means I am no more\n [unreadable part] I have been stuck here on this island for months and I do not know if it is me slowly going mad or if there really are something beneath the temple\n[smeared ink]need to find somewhere to hide soon or else they will find me....\nthey come out during the nigh and they are hungry I can feel it\n [signed First Mate Hopkins]") };
 	//push back to vector so we can use it, some of the items like the fruit for instance is meant to be found by the player when searching the island for food
 	gameItems.push_back(scroll01);
 	gameItems.push_back(hardtack);
 	gameItems.push_back(melon);
 	gameItems.push_back(wildpeach);
+	gameItems.push_back(silverfinCarp);
+	gameItems.push_back(grilledSilverfin);
 	gameItems.push_back(letterInABottle);//found when searching the beach
 }
 //Here we load locations from a number of textfiles enabling us to organize the game locations better.

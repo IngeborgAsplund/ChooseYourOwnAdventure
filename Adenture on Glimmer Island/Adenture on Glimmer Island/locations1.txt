@@ -70,9 +70,21 @@ was the inhabitants of the island.
 ===
 #Small waterfall
 The fireflies seem to be drawn to a small waterall hitting a lagoon suth west of the camp.
-\nThe lagoon is surrounded by jungle threes and %%Name%% can hear the humming\n
+The lagoon is surrounded by jungle threes and %%Name%% can hear the humming\n
 of thousands of tropical insects in the distance"
 &Mermaid Lagoon:1. Walk out from the waterfall toward the lagoon
-&Dark Campsite:2. Go back to camp.
+&Peach three glade:2. Search the jungle threes for fruit
+&Dark Campsite:3. Go back to camp.
+===
+#Peach three glade
+A glade of threes holding small bright red fruits grows close by the waterfall.
+The moon shine down over the branches and bright firelfies soars lighly in the air.
+%%Name%% reach up and picks a couple of the fruits and put in their
+satchel. This could be of use for later.
+&Small waterfall:1. Go back.
+^RedWildpeach
+^RedWildpeach
+^RedWildpeach
+^RedWildpeach
 ===
 

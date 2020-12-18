@@ -1,7 +1,8 @@
-#Treasure Shore
-*1
-6
+#Fishing in the lagoon
+*Sasha
+5
 ~Campsite
 ~Jungle
-~Treasure Shore
-~Letter In A Bottle
+~Ruins
+~Mermaid Lagoon
+~Fishing in the lagoon
