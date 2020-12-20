@@ -3,17 +3,17 @@
 The wreckage of the vessel %%Name%% was traveling with seem to have washed up on this barren shoreline togheter with them.
 Dark brown wood sticks up from the side and %%Name%% can see part of the bow of the ship
 crushed between two dark jagged cliff. Part of the captains quarters seem to also have washed up on shore.
-&Wreckage:1. Stop investigation
+&Wreckage:Stop investigation
 ===
 #The Bronze Flute
 According to the name ingraved into the intact part of the shipwreck bow this vessel was named
 The Bronce Flute. Although the vessel is entirely ruined there are still signs pointing to her
 once beeing an incredible vessel, probably built for warfare or to be part of a kings personal fleet.
-&Wreckage:1. Stop investigation
+&Wreckage:Stop investigation
 ===
 #Unknown Old Vessel
 Everything about this vessel is hard to make out, its part is scattered across a larger area and most
 of her pieces are small, withered and old. It seems she have laid here for a longer amount of time and
 among her pieces aquatic birds is currently nesting.
-&Wreckage:1. Stop investigation
+&Wreckage:Stop investigation
 ===

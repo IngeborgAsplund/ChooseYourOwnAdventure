@@ -61,9 +61,10 @@ void Game::Run()
 			return;// return back to top, exiting the loop
 		}
 		//write out all of the choices for the current location
-		for(int i =0;i<player.currentLocation->choices.size();i++)
+		std::vector<LocationChoice> available = FindAvailableChoices();
+		for(int i =0;i<available.size();i++)
 		{
-			std::cout << player.currentLocation->choices[i].choiceDescription<<"\n";			
+			std::cout <<i+1<<". "<< available[i].choiceDescription<<"\n";			
 		}
 		
 		std::cout << "Menue [m]\n"<<"Inventory[i]\n";//write out input call pr the menue
@@ -90,10 +91,10 @@ void Game::Run()
 			std::string::size_type st;
 			input = std::stoi(inputstring, &st);
 			//if input is bigger than zero but less than or equal to the max amount of choices
-			if (input > 0 && input <= player.currentLocation->choices.size())
+			if (input > 0 && input <= available.size())
 			{
 				
-				player.currentLocation = gameData.GetLocationWithId(player.currentLocation->choices[input - 1].locationID);
+				player.currentLocation = gameData.GetLocationWithId(available[input - 1].locationID);
 				player.moves++;//increase player moves
 				player.satation -= 5;
 			}
@@ -102,6 +103,25 @@ void Game::Run()
 		
 	}
 	
+}
+//This function sorts out the choices for each location into an own separate vector that it returns for the main function to use for presenting choices
+std::vector<LocationChoice> Game::FindAvailableChoices()
+{
+	std::vector<LocationChoice> choicesToPresent;
+	for(int i = 0; i<player.currentLocation->choices.size();i++)
+	{
+		if(!player.AlreadyVisited(player.currentLocation->choices[i].locationID))
+		{
+			choicesToPresent.push_back(player.currentLocation->choices[i]);
+		}
+		else
+		{
+			std::shared_ptr<Location> temp = gameData.GetLocationWithId(player.currentLocation->choices[i].locationID);
+			if (!temp->uinqueLocation)
+				choicesToPresent.push_back(player.currentLocation->choices[i]);
+		}
+	}
+	return choicesToPresent;
 }
 void Game::ShowMenue(std::regex inRegex)
 {

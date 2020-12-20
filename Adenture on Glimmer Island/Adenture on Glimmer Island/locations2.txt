@@ -3,56 +3,58 @@
 %%Name%% enter the temple ruins finding themselves standing in what appears to once have been a foayer area
 Two corridors lead into the temple from where %%Name%% stands, 
 one continuing south from where %%Name%% stand\nand one turning to the left.
-&Main Corridor:1. Follow the main corridor
-&Left Corridor:2. Go to the left
-&Ruins:3. Go back
+&Main Corridor:Follow the main corridor
+&Left Corridor:Go to the left
+&Ruins:Go back
 ===
 #Left Corridor
 Turning to the left %%Name%% enter a long corridor.
 Withered stonewalls on towers on both sides of %%Name%%
 and an further down %%Name%% se a doorway and a set of stairs leading down.
-&Octagon Chamber:1. Enter Doorway
-&Lower Floor:2. Go down the stairs
-&Temple Entrance:3. Go back
+&Octagon Chamber:Enter Doorway
+&Lower Floor:Go down the stairs
+&Temple Entrance:Go back
 ===
 #Main Corridor
 Walkning south from the temple entance %%Name%% come upon three doorways
 one to the right, one to the left and one to the south
-&Ritual Chamber:1. Enter doorway to the right
-&Pit Chamber:2. Enter doorway to the left
-&Round Chamber:3. Enter doorway to the south
-&Temple Entrance:4. Go back
+&Ritual Chamber:Enter doorway to the right
+&Pit Chamber:Enter doorway to the left
+&Round Chamber:Enter doorway to the south
+&Temple Entrance:Go back
 ===
 #Ritual Chamber
 %%Name%% enter a small room, walls and floor made of greenish overgrown stones. 
 In the middle sits the remnants of a black stone altar.
-&Altar:1. Examine the altar
-&Main Corridor:2. Go back
+&Altar:Examine the altar
+&Main Corridor:Go back
 ===
 #Altar
 Carved into the surface in the partially ruined altar is the what appear to be
 the image of an ailien looking creatrue with multiple serpentine limbs attached to it.
 Examining the altar %%Name%% manage to dechifer the name Lor'Ashack written above the image.
-&Ritual Chamber:1. Stop Examination
+&Ritual Chamber:Stop Examination
+@
 ===
 #Pit Chamber
 %%Name%% enter a large rectangular room lined with stone stairs leading down to a pit in the middle. 
 a shallow layer of water cover the floor of the pit.
-&Pit Floor:1. Approach the pit
-&Main Corridor:2. Leave
+&Pit Floor:Approach the pit
+&Main Corridor:Leave
 ===
 #Pit Floor
 %%%Name%% carefully climb down the stairs toward the pit in the middle of the chamber. 
 Upon reaching the floor %%Name%% realises the fluid covering the floor is way too thick 
 and dark to be water and it gives off a strange almost pulsating feeling when it comes in contact with skin.
-&Pit Chamber:1. Leave pit
+&Pit Chamber:Leave pit
+@
 ===
 #Round Chamber
 The room %%Name%% have entered is big with rounded walls, whaat appears to be 
 indents or shelves in the walls appear with regular frequencey.
 There are eigth of them in total.
-&Mystic scroll: 1. Examine the shelves
-&Main Corridor:2. Go back
+&Mystic scroll:Examine the shelves
+&Main Corridor:Go back
 ===
 #Mystic scroll
 Looking through the shelves that when examined closer seem to have been intentionally built or rather
@@ -60,34 +62,36 @@ carved from the rocks %%Name%% find an old parchment scroll partially disolved b
 Written on the least damaged part of the scroll the following can be read.-Connected in life through death
 we will serve the king of tides from ancient time.
 &Round Chamber:1. Put away scroll
+^WritingsOfLor'Ashack
+@
 ===
 #Octagon Chamber
 %%Name%% enter a large octagonal chamber, empty skanses lines the wall with frequent intervalls
 and in the middle rest a garagantum statue of a strange creature seemingly made up of snakes.
 it is partially overgrown with jungle flora.
-&Left Corridor:1. Go back
+&Left Corridor:Go back
 ===
 #Lower Floor
 Decending down the staors %%Name%% come upon a big open space.
 Four low square shaped plattforms is located in each corner of the room
 in the far end %%Name%% se a single glowing doorway shaped like an eye.
-&Chamber of Lor'Ashack:1. Go through the glowing eye
-&Left Corridor:2. Go back up the stairs
+&Chamber of Lor'Ashack:Go through the glowing eye
+&Left Corridor:Go back up the stairs
 ===
 #Chamber of Lor'Ashack
 A huge chamber stretches out in front of %%Name%%. Towards what seem to be a steaming subterrainian lake.
 Alongside the wall several statues depicting a creature partially made up of snakes is lined up.
 A low ominous hissing sound can be heard near the waterline
-&Lor'Ashack:1. Gingerly move towards the waterline
-&Lower Floor:2. Go back, making sure not to make a noise"
+&Lor'Ashack:Gingerly move towards the waterline
+&Lower Floor:Go back, making sure not to make a noise"
 ===
 #Lor'Ashack
 From the water rises a creature, a dangling mass of rotten seaweed,
 several bestial heads attached to a massive body of some huge aquatic animal
 and from the central mass a cluster of snakelike tendrils ending in gaping toothy maws. 
 The creature lets out a menacing roar.
-&Death1:1. Hide Behind one of the statues
-&Temple Entrance:2. Run!
+&Death1:Hide Behind one of the statues
+&Temple Entrance:Run!
 ===
 #Death1
 Two massive tentacles rips away the statue %%Name%% where hiding behind.

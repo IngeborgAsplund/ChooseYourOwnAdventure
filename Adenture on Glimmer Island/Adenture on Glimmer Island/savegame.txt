@@ -1,8 +1,9 @@
-#Fishing in the lagoon
-*Sasha
-5
+#Small waterfall
+*Theo
+8
 ~Campsite
-~Jungle
-~Ruins
+~Dark Campsite
+~FruitTrees
+~Small waterfall
 ~Mermaid Lagoon
 ~Fishing in the lagoon

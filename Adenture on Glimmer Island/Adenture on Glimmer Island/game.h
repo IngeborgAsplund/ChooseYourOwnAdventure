@@ -15,6 +15,7 @@ private:
 	//functions
 	void ShowMenue(std::regex inRegex);//this is called whenever we want to bring up the games menue, right now it has two options exit and new game
 	void ShowvInventory();
+	std::vector<LocationChoice> FindAvailableChoices();
 	void SaveGame();
 	void LoadGame();
 	std::string NameInput();//take input from the player
