@@ -1,9 +1,9 @@
-#Small waterfall
-*Theo
-8
+#Grill food
+*Samuel
+9
 ~Campsite
 ~Dark Campsite
-~FruitTrees
 ~Small waterfall
 ~Mermaid Lagoon
 ~Fishing in the lagoon
+~Grill food

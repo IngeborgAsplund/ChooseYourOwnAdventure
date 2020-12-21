@@ -3,7 +3,16 @@
 The wreckage of the vessel %%Name%% was traveling with seem to have washed up on this barren shoreline togheter with them.
 Dark brown wood sticks up from the side and %%Name%% can see part of the bow of the ship
 crushed between two dark jagged cliff. Part of the captains quarters seem to also have washed up on shore.
+&Captains Quarter: Look through the camptains quarter
 &Wreckage:Stop investigation
+===
+#Captains Quarter
+The shattered remains of the captains quarter lies before %%Name%%. They stop and looks out in the distance for
+a while remembering Captain Rupert Steelfoot owner and head of The Glowing Maiden since more than 15 years back.
+%%Name%% cannot help themselves thinking about the captain and where he might have gone now. A gnawing feeling
+tells them that he probably did not make it when the vessel sunk in the storm.
+&The Glowing Maiden:Go back
+@
 ===
 #The Bronze Flute
 According to the name ingraved into the intact part of the shipwreck bow this vessel was named

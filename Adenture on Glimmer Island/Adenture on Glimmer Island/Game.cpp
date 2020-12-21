@@ -40,6 +40,17 @@ void Game::Run()
 					}
 				}
 			}
+			if(player.currentLocation->negativeItems.size()>0)
+			{
+				for(int k = 0; k< player.currentLocation->negativeItems.size(); k++)
+				{
+					if (gameData.GetItemById(player.currentLocation->negativeItems[k]) != nullptr)
+					{
+						player.RemoveItem(player.currentLocation->negativeItems[k], 1);
+						std::cout << "\nUsed up " << player.currentLocation->negativeItems[k]<<"\n";
+					}
+				}
+			}
 			player.visitedLocations.push_back(player.currentLocation->id);
 		}
 		//check if choices equals zero
@@ -64,7 +75,7 @@ void Game::Run()
 		std::vector<LocationChoice> available = FindAvailableChoices();
 		for(int i =0;i<available.size();i++)
 		{
-			std::cout <<i+1<<". "<< available[i].choiceDescription<<"\n";			
+			std::cout <<i+1<<". "<< std::regex_replace(available[i].choiceDescription,nameRegex,player.name)<<"\n";			
 		}
 		
 		std::cout << "Menue [m]\n"<<"Inventory[i]\n";//write out input call pr the menue
@@ -110,16 +121,27 @@ std::vector<LocationChoice> Game::FindAvailableChoices()
 	std::vector<LocationChoice> choicesToPresent;
 	for(int i = 0; i<player.currentLocation->choices.size();i++)
 	{
-		if(!player.AlreadyVisited(player.currentLocation->choices[i].locationID))
+		std::shared_ptr<Location> temp = gameData.GetLocationWithId(player.currentLocation->choices[i].locationID);
+		//the majority case
+		if(!player.AlreadyVisited(temp->id)&&!temp->requireKey)
 		{
 			choicesToPresent.push_back(player.currentLocation->choices[i]);
 		}
-		else
-		{
-			std::shared_ptr<Location> temp = gameData.GetLocationWithId(player.currentLocation->choices[i].locationID);
-			if (!temp->uinqueLocation)
-				choicesToPresent.push_back(player.currentLocation->choices[i]);
+		else if(!temp->uinqueLocation&&!temp->requireKey)
+		{					
+			choicesToPresent.push_back(player.currentLocation->choices[i]);
 		}
+		else 
+		{
+			if(temp->requireKey)
+			{
+				if (player.FindItem(temp->key)!=nullptr)
+				{
+					choicesToPresent.push_back(player.currentLocation->choices[i]);
+				}
+			}
+		}
+
 	}
 	return choicesToPresent;
 }

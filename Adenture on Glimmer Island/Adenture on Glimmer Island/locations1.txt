@@ -7,6 +7,17 @@ reaching towards what appears to be a range of muntains in the distance.
 &Dark Campsite:Extinguish the campfire
 &Jungle:Walk south towards the Jungle
 &Wreckage:Examine the wreckaged ships
+&Grill food:Cook some silverfin carp
+===
+#Grill food
+%%Name%% take some tranquil time to grill the fish they caught earlier, hoping it
+will be more edible when no longer raw. The waves clash towards the shoreline,
+the firelight reflect in the water and %%Name find themselves humming on an old
+sea chanty while looking into the flames.
+&Campsite:Finish Cooking
+^Grilled silverfin
+-Silverfin carp
+¤Silverfin carp
 ===
 #Jungle
 Thick vines and lush threes surrounds %%Name%% on all sides.

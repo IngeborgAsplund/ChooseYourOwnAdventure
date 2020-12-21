@@ -31,6 +31,9 @@ struct Location
 	std::string description;
 	std::vector<LocationChoice> choices;
 	std::vector<std::string> items;
+	std::vector<std::string>negativeItems;//remove these when entering this location
+	std::string key = "";
+	bool requireKey = false;
 	bool uinqueLocation = false;
 	//the constructor takes in strings rather than string references right now as the strings are defined at creation of this struct
 	// in the future when predefined strings is used I will change these to string references, the same goes for the Location choice above

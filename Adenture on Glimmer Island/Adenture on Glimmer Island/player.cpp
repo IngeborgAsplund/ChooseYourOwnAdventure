@@ -62,6 +62,19 @@ bool Player::AlreadyVisited(std::string compareLoc)
 		return true;
 	return false;
 }
+//Search for 
+std::shared_ptr<InventoryItem>Player::FindItem(const std::string& search)
+{
+	for(int it = 0; it< inventory.size();it++)
+	{
+		if (search == inventory[it].itemId)
+		{
+			std::shared_ptr<InventoryItem> returnval = std::make_shared<InventoryItem>(inventory[it]);
+			return returnval;
+		}
+	}
+	return nullptr;
+}
 //set up all but the players starter location and the ininital console output this serves the purpose of making the menue code in the main game loop more readable
 void Player::SetUpPlayer()
 {

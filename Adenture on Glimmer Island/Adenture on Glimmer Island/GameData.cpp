@@ -102,6 +102,16 @@ bool GameData::LoadLocationsFromFile(const std::string& fileName)
 				working.uinqueLocation = true;
 				continue;
 			}
+			if(line[0]=='¤')
+			{
+				working.requireKey = true;
+				working.key = line.substr(1, line.npos);
+				continue;
+			}
+			if(line[0]=='-')
+			{
+				working.negativeItems.push_back(line.substr(1, line.npos));
+			}
 			if(line=="===")
 			{
 				std::shared_ptr<Location> add = std::make_shared<Location>(working);
@@ -109,9 +119,12 @@ bool GameData::LoadLocationsFromFile(const std::string& fileName)
 				locationIndex.insert({ working.id,add });
 				working.choices.clear();
 				working.items.clear();
+				working.negativeItems.clear();
 				working.id.clear();
 				working.description.clear();
+				working.key.clear();
 				working.uinqueLocation = false;
+				working.requireKey = false;
 				continue;
 			}
 			else
