@@ -99,12 +99,11 @@ void Game::Run()
 		}
 		else
 		{
-			std::string::size_type st;
-			input = std::stoi(inputstring, &st);
+			
+			input = CastStringToInt(inputstring);
 			//if input is bigger than zero but less than or equal to the max amount of choices
 			if (input > 0 && input <= available.size())
-			{
-				
+			{				
 				player.currentLocation = gameData.GetLocationWithId(available[input - 1].locationID);
 				player.moves++;//increase player moves
 				player.satation -= 5;
@@ -279,6 +278,21 @@ void Game::LoadGame()
 	}
 	else
 		std::cout << "Cannot open savefile\n";
+}
+//whenever we ask the player for input we want to use this to catch wrongful input whenever we want to cast a string to an int.
+int Game:: CastStringToInt(std::string &castMe)
+{
+	std::string::size_type st;	
+	try
+	{
+		int output = std::stoi(castMe, &st);
+		return output;
+	}
+	catch(const std::invalid_argument& exception)
+	{
+		std::cout << "Input was invalid, cannot cast letters to an int";
+	}
+	return 0;
 }
 
 

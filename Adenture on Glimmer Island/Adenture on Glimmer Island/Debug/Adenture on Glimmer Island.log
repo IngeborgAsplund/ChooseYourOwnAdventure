@@ -1,7 +1,13 @@
-﻿  gamedata.cpp
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\gamedata.cpp(18,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\gamedata.cpp(23,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\gamedata.cpp(45,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\gamedata.cpp(58,17): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\gamedata.cpp(198,18): warning C4018: '<': signed/unsigned mismatch
+﻿  game.cpp
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(33,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(45,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(65,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(76,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(105,27): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(121,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(182,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(184,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(203,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(236,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Adenture on Glimmer Island\game.cpp(291,37): warning C4101: 'exception': unreferenced local variable
   Adenture on Glimmer Island.vcxproj -> C:\Users\Ingeborg\Documents\GitHub\ChooseYourOwnAdventure\Adenture on Glimmer Island\Debug\Adenture on Glimmer Island.exe

@@ -19,5 +19,6 @@ private:
 	void SaveGame();
 	void LoadGame();
 	std::string NameInput();//take input from the player
+	int CastStringToInt(std::string &castMe);//try and cast the string returning an errormessage to console if failing
 
 };

@@ -1,9 +1,7 @@
-#Grill food
-*Samuel
-9
+#Mermaid Lagoon
+*Sasha
+4
 ~Campsite
 ~Dark Campsite
-~Small waterfall
+~Jungle
 ~Mermaid Lagoon
-~Fishing in the lagoon
-~Grill food
