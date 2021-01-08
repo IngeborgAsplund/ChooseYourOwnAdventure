@@ -1,7 +1,9 @@
-#Mermaid Lagoon
-*Sasha
-4
+#Temple Entrance
+*sara
+2
 ~Campsite
 ~Dark Campsite
-~Jungle
-~Mermaid Lagoon
+~Temple Entrance
+~Campsite
+~Dark Campsite
+~Temple Entrance
